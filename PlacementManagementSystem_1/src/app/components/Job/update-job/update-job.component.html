@@ -1,0 +1,112 @@
+
+<h1 class="text-center">Update Job Detail</h1>
+
+<div class="container">
+    <div class="bootstrap-wrapper">
+       <div class="row">
+           <div class="col-md-6 offset-3">
+
+               <form [formGroup]="updateJobForm" (ngSubmit)="updateJob()">
+                   <div class="form-group">
+                     <label for="jobName">Job Name</label>
+                     <input type="text" 
+                           class="form-control" 
+                           id="jobName" 
+                           name="jobName"
+                           formControlName="jobName"
+                           aria-describedby="emailHelp">
+                           <span *ngIf="updateJobForm.controls['jobName'].touched && !updateJobForm.controls['jobName'].valid">
+                        
+                               <span *ngIf="updateJobForm.controls['jobName'].hasError('required')">
+                                      Job name is required !
+                               </span>
+
+                               <span *ngIf="updateJobForm.controls['jobName'].hasError('minlength')">
+                                    Job should be minimum 4 character !
+                               </span>
+
+                               <span *ngIf="updateJobForm.controls['jobName'].hasError('maxlength')">
+                                      Job name should be maxmimum 20 character !
+                               </span>
+
+
+                           </span>
+                   </div>
+
+
+                   <div class="form-group">
+                    <label for="jobDescription">Job Description</label>
+                    <input type="text" 
+                          class="form-control" 
+                          id="jobDescription" 
+                          name="jobDescription"
+                          formControlName="jobDescription"
+                          aria-describedby="emailHelp">
+                          <span *ngIf="updateJobForm.controls['jobDescription'].touched && !updateJobForm.controls['jobDescription'].valid">
+                       
+                              <span *ngIf="updateJobForm.controls['jobDescription'].hasError('required')">
+                                    Job Description is required !
+                              </span>
+
+                              <span *ngIf="updateJobForm.controls['jobDescription'].hasError('minlength')">
+                                    Job Description should be minimum 4 character !
+                              </span>
+
+                              <span *ngIf="updateJobForm.controls['jobDescription'].hasError('maxlength')">
+                                   Job Description should be maxmimum 20 character !
+                              </span>
+
+
+                          </span>
+                  </div>
+
+
+                
+
+                     <div class="form-group">
+                            <label for="jobSalary">Job Salary</label>
+                            <input type="text" 
+                                  class="form-control" 
+                                  id="jobSalary" 
+                                  name="jobSalary"
+                                  formControlName="jobSalary"
+                                  aria-describedby="emailHelp">
+                                  <span *ngIf="updateJobForm.controls['jobSalary'].touched && !updateJobForm.controls['jobSalary'].valid">
+                             
+                                    <span *ngIf="updateJobForm.controls['jobSalary'].hasError('required')">
+                                            Job Salary is required !
+                                    </span>
+        
+                                    <span *ngIf="updateJobForm.controls['jobSalary'].hasError('minlength')">
+                                            Job Salary should be minimum 5000 digit !
+                                    </span>
+        
+                                    <span *ngIf="updateJobForm.controls['jobSalary'].hasError('maxlength')">
+                                            Job Salary should be maximum 500000 digit !
+                                    </span>
+        
+        
+                                </span>
+                       
+                          </div>
+        
+                     
+                     
+                     
+                   
+                   <div class="form-group form-check">
+                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                   </div>
+                   
+                     
+                   <button type="submit" class="btn btn-success">Update</button>
+                   <button type="reset" class="btn btn-primary">Reset</button>
+                 </form>
+           
+           </div>
+       </div>
+
+   </div>
+   
+   </div>

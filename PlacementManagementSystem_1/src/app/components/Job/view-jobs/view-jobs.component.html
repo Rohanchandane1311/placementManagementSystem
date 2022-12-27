@@ -1,0 +1,40 @@
+<h1 class="text-center">Job List</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Job Name</th>
+            <th scope="col">Job Description</th>
+            <th scope="col">Job Salary</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of jobList">
+            <!-- <th scope="row">1</th> -->
+            <td> {{data.jobId}}</td>
+            <td>{{data.jobName}}</td>
+            <td>{{data.jobDescription}}</td>
+            <td>{{data.jobSalary}}</td>
+            
+<div *ngIf="status=='student'">
+   <td><button style="color: green;" (click)="applyJob(data.jobId)">Apply Job</button></td> 
+</div>
+<div *ngIf="status!='student'">
+  <td>
+     <a routerLink="/admin-dashboard/update-job/{{data.jobId}}"><i  style="color: green;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+     </a><i  style="color: red;" (click)="deleteJob(data.jobId)"  class="fa fa-trash" aria-hidden="true"></i> 
+    </td> 
+</div>
+           
+          
+          </tr>
+           </tbody>   
+      </table>
+</div>
+
+
+
+

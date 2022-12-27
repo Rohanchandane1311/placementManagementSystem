@@ -1,0 +1,129 @@
+<h1 class="text-center">Add Jobs</h1>
+
+<div class="container">
+     <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+
+                <form [formGroup]="jobReg" (ngSubmit)="register()">
+
+
+                    <div class="form-group">
+                      
+                      <select class="custom-select" 
+                            id="company"
+                             name="company" 
+                             formControlName="company">
+                         <option *ngFor="let data of companyList" [ngValue]="data">{{data.companyName}}</option>
+
+                      </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                      <label for="jobName">Job Name</label>
+                      <input type="text" 
+                            class="form-control" 
+                            id="jobName" 
+                            name="jobName"
+                            formControlName="jobName"
+                            aria-describedby="emailHelp">
+                            <span *ngIf="jobReg.controls['jobName'].touched && !jobReg.controls['jobName'].valid">
+                         
+                                <span *ngIf="jobReg.controls['jobName'].hasError('required')">
+                                       Job name is required !
+                                </span>
+
+                                <span *ngIf="jobReg.controls['jobName'].hasError('minlength')">
+                                       Job name should be minimum 3 character !
+                                </span>
+
+                                <span *ngIf="jobReg.controls['jobName'].hasError('maxlength')">
+                                       Job name should be maxmimum 20 character !
+                                </span>
+
+
+                            </span>
+                    </div>
+
+
+                      <div class="form-group">
+                          <label for="jobDescription">Job Description</label>
+                          <input type="text" 
+                                class="form-control" 
+                                id="jobDescription" 
+                                name="jobDescription"
+                                formControlName="jobDescription"
+                                aria-describedby="emailHelp">
+                                <span *ngIf="jobReg.controls['jobDescription'].touched && !jobReg.controls['jobDescription'].valid">
+                           
+                                  <span *ngIf="jobReg.controls['jobDescription'].hasError('required')">
+                                          Job Description is required !
+                                  </span>
+  
+                                  <span *ngIf="jobReg.controls['jobDescription'].hasError('minlength')">
+                                          Job Description should be minimum 4 character !
+                                  </span>
+  
+                                  <span *ngIf="jobReg.controls['jobDescription'].hasError('maxlength')">
+                                           Job Description should be maxmimum 20 character !
+                                  </span>
+  
+  
+                              </span>
+                     
+                        </div>
+
+                    
+                      
+                      <div class="form-group">
+                            <label for="jobSalary">Job Salary</label>
+                            <input type="text" 
+                                  class="form-control" 
+                                  id="jobSalary" 
+                                  name="jobSalary"
+                                  formControlName="jobSalary"
+                                  aria-describedby="emailHelp">
+                                  <span *ngIf="jobReg.controls['jobSalary'].touched && !jobReg.controls['jobSalary'].valid">
+                             
+                                    <span *ngIf="jobReg.controls['jobSalary'].hasError('required')">
+                                           Job Salary is required !
+                                    </span>
+    
+                                    <span *ngIf="jobReg.controls['jobSalary'].hasError('min')">
+                                           Job Salary should be minimum 5000  !
+                                    </span>
+    
+                                    <span *ngIf="jobReg.controls['jobSalary'].hasError('max')">
+                                           Job Salary should be maxmimum 500000 !
+                                    </span>
+    
+    
+                                </span>
+                       
+                          </div>
+  
+                      
+                      
+                    <div class="form-group form-check">
+                        
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    </div>
+                    
+                    
+                      
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                  </form>
+            
+            </div>
+        </div>
+
+    </div>
+    
+    </div>
+
+

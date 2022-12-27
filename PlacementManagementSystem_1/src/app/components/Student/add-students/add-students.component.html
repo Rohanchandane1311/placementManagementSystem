@@ -1,0 +1,187 @@
+<h1 class="text-center">Add Students</h1>
+
+<div class="container">
+     <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+
+                <form [formGroup]="studentReg" (ngSubmit)="register()">
+                    <div class="form-group">
+                      <label for="studentName">Student Name</label>
+                      <input type="text" 
+                            class="form-control" 
+                            id="studentName" 
+                            name="studentName"
+                            formControlName="studentName"
+                            aria-describedby="emailHelp">
+                            <span *ngIf="studentReg.controls['studentName'].touched && !studentReg.controls['studentName'].valid">
+                         
+                                <span *ngIf="studentReg.controls['studentName'].hasError('required')">
+                                       Student name is required !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentName'].hasError('minlength')">
+                                       Student name should be minimum 4 character !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentName'].hasError('maxlength')">
+                                       Student name should be maxmimum 10 character !
+                                </span>
+
+
+                            </span>
+                    </div>
+
+
+                      <div class="form-group">
+                          <label for="studentClass">Student Class</label>
+                          <input type="text" 
+                                class="form-control" 
+                                id="studentClass" 
+                                name="studentClass"
+                                formControlName="studentClass"
+                                aria-describedby="emailHelp">
+                                <span *ngIf="studentReg.controls['studentClass'].touched && !studentReg.controls['studentClass'].valid">
+                           
+                                  <span *ngIf="studentReg.controls['studentClass'].hasError('required')">
+                                         Student class is required !
+                                  </span>
+  
+                                  <span *ngIf="studentReg.controls['studentClass'].hasError('minlength')">
+                                         Student class should be minimum 4 character !
+                                  </span>
+  
+                                  <span *ngIf="studentReg.controls['studentClass'].hasError('maxlength')">
+                                         Student class should be maxmimum 10 character !
+                                  </span>
+  
+  
+                              </span>
+                     
+                        </div>
+
+                    <div class="form-group">
+                        <label for="studentEmail">Student Email</label>
+                        <input type="email" 
+                              class="form-control" 
+                              id="studentEmail" 
+                              name="studentEmail"
+                              formControlName="studentEmail"
+                              aria-describedby="emailHelp">
+                              <span *ngIf="studentReg.controls['studentEmail'].touched && !studentReg.controls['studentEmail'].valid">
+                         
+                                <span *ngIf="studentReg.controls['studentEmail'].hasError('required')">
+                                       Student email is required !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentEmail'].hasError('email')">
+                                       Please enter correct email !
+                                </span>
+
+                                
+
+                            </span>
+                   
+                      </div>
+
+                      <div class="form-group">
+                        <label for="studentAge">Student Age</label>
+                        <input type="text" 
+                              class="form-control" 
+                              id="studentAge" 
+                              name="studentAge"
+                              formControlName="studentAge"
+                              aria-describedby="emailHelp">
+                              <span *ngIf="studentReg.controls['studentAge'].touched && !studentReg.controls['studentAge'].valid">
+                         
+                                <span *ngIf="studentReg.controls['studentAge'].hasError('required')">
+                                       Student age is required !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentAge'].hasError('min')">
+                                       Student age should be minimum 10 year !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentAge'].hasError('max')">
+                                       Student age should be maxmimum 30 year !
+                                </span>
+
+
+                            </span>
+                   
+                      </div>
+
+                      <div class="form-group">
+                            <label for="studentCGPA">Student CGPA</label>
+                            <input type="text" 
+                                  class="form-control" 
+                                  id="studentCGPA" 
+                                  name="studentCGPA"
+                                  formControlName="studentCGPA"
+                                  aria-describedby="emailHelp">
+                                  <span *ngIf="studentReg.controls['studentCGPA'].touched && !studentReg.controls['studentCGPA'].valid">
+                             
+                                    <span *ngIf="studentReg.controls['studentCGPA'].hasError('required')">
+                                           Student class is required !
+                                    </span>
+    
+                                    <span *ngIf="studentReg.controls['studentCGPA'].hasError('minlength')">
+                                           Student class should be minimum 4 character !
+                                    </span>
+    
+                                    <span *ngIf="studentReg.controls['studentCGPA'].hasError('maxlength')">
+                                           Student class should be maxmimum 10 character !
+                                    </span>
+    
+    
+                                </span>
+                       
+                          </div>
+  
+                      
+                      
+                    <div class="form-group">
+                      <label for="studentPassword">Password</label>
+                      <input type="password"
+                             class="form-control" 
+                             id="studentPassword"
+                             name="studentPassword"
+                             formControlName="studentPassword"
+                             aria-describedby="emailHelp">
+
+                             <span *ngIf="studentReg.controls['studentPassword'].touched && !studentReg.controls['studentPassword'].valid">
+                         
+                                <span *ngIf="studentReg.controls['studentPassword'].hasError('required')">
+                                       Student password is required !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentPassword'].hasError('minlength')">
+                                       Student password should be minimum 4 character !
+                                </span>
+
+                                <span *ngIf="studentReg.controls['studentPassword'].hasError('maxlength')">
+                                       Student password should be maxmimum 10 chracter !
+                                </span>
+
+
+                            </span>
+                    </div>
+                    <div class="form-group form-check">
+                        
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    </div>
+                    
+                    
+                      
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                  </form>
+            
+            </div>
+        </div>
+
+    </div>
+    
+    </div>
+

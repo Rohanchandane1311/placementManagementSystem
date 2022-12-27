@@ -1,0 +1,136 @@
+<h1 class="text-center">Add Companys</h1>
+
+<div class="container">
+     <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+
+                <form [formGroup]="companyReg" (ngSubmit)="register()">
+                    <div class="form-group">
+                      <label for="companyName">Company Name</label>
+                      <input type="text" 
+                            class="form-control" 
+                            id="companyName" 
+                            name="companyName"
+                            formControlName="companyName"
+                            aria-describedby="emailHelp">
+                            <span *ngIf="companyReg.controls['companyName'].touched && !companyReg.controls['companyName'].valid">
+                         
+                                <span *ngIf="companyReg.controls['companyName'].hasError('required')">
+                                       Company name is required !
+                                </span>
+
+                                <span *ngIf="companyReg.controls['companyName'].hasError('minlength')">
+                                       Company name should be minimum 4 character !
+                                </span>
+
+                                <span *ngIf="companyReg.controls['companyName'].hasError('maxlength')">
+                                       Company name should be maxmimum 10 character !
+                                </span>
+
+
+                            </span>
+                    </div>
+
+
+                      <div class="form-group">
+                          <label for="companyDescription">Company Description</label>
+                          <input type="text" 
+                                class="form-control" 
+                                id="companyDescription" 
+                                name="companyDescription"
+                                formControlName="companyDescription"
+                                aria-describedby="emailHelp">
+                                <span *ngIf="companyReg.controls['companyDescription'].touched && !companyReg.controls['companyDescription'].valid">
+                           
+                                  <span *ngIf="companyReg.controls['companyDescription'].hasError('required')">
+                                           Company Description is required !
+                                  </span>
+  
+                                  <span *ngIf="companyReg.controls['companyDescription'].hasError('minlength')">
+                                        Company Description should be minimum 4 character !
+                                  </span>
+  
+                                  <span *ngIf="companyReg.controls['companyDescription'].hasError('maxlength')">
+                                    Company Description should be maxmimum 15 character !
+                                  </span>
+  
+  
+                              </span>
+                     
+                        </div>
+
+                    <div class="form-group">
+                        <label for="companyEmail">Company Email</label>
+                        <input type="email" 
+                              class="form-control" 
+                              id="companyEmail" 
+                              name="companyEmail"
+                              formControlName="companyEmail"
+                              aria-describedby="emailHelp">
+                              <span *ngIf="companyReg.controls['companyEmail'].touched && !companyReg.controls['companyEmail'].valid">
+                         
+                                <span *ngIf="companyReg.controls['companyEmail'].hasError('required')">
+                                       Company Email is required !
+                                </span>
+
+                                <span *ngIf="companyReg.controls['companyEmail'].hasError('email')">
+                                       Please enter correct email !
+                                </span>
+
+                                
+
+                            </span>
+                   
+                      </div>
+
+                      
+                      <div class="form-group">
+                            <label for="companyAddress">Company Address</label>
+                            <input type="text" 
+                                  class="form-control" 
+                                  id="companyAddress" 
+                                  name="companyAddress"
+                                  formControlName="companyAddress"
+                                  aria-describedby="emailHelp">
+                                  <span *ngIf="companyReg.controls['companyAddress'].touched && !companyReg.controls['companyAddress'].valid">
+                             
+                                    <span *ngIf="companyReg.controls['companyAddress'].hasError('required')">
+                                            Company Address is required !
+                                    </span>
+    
+                                    <span *ngIf="companyReg.controls['companyAddress'].hasError('minlength')">
+                                            Company Address should be minimum 4 character !
+                                    </span>
+    
+                                    <span *ngIf="companyReg.controls['companyAddress'].hasError('maxlength')">
+                                           Company Address should be maxmimum 15 character !
+                                    </span>
+    
+    
+                                </span>
+                       
+                          </div>
+  
+                      
+                      
+                    <div class="form-group form-check">
+                        
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    </div>
+                    
+                    
+                      
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                  </form>
+            
+            </div>
+        </div>
+
+    </div>
+    
+    </div>
+
+

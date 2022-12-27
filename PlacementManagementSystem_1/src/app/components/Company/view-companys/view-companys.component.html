@@ -1,0 +1,37 @@
+<h1 class="text-center">Company List</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Company Description</th>
+            <th scope="col">Email</th>
+            <th scope="col">Company Address</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of companyList">
+            <!-- <th scope="row">1</th> -->
+            <td> {{data.companyId}}</td>
+            <td>{{data.companyName}}</td>
+            <td>{{data.companyDescription}}</td>
+            <td>{{data.companyEmail}}</td>
+            <td>{{data.companyAddress}}</td>
+           
+            
+            
+            <td><a routerLink="/admin-dashboard/update-company/{{data.companyId}}"><i  style="color: green;" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>|<i  style="color: red;" (click)="deleteCompany(data.companyId)"  class="fa fa-trash" aria-hidden="true"></i>
+            </td>
+          
+          </tr>
+           </tbody>   
+      </table>
+</div>
+
+
+
+

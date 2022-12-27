@@ -1,0 +1,161 @@
+<h1 class="text-center">Add Managers</h1>
+
+<div class="container">
+     <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+
+                <form [formGroup]="managerReg" (ngSubmit)="register()">
+                    <div class="form-group">
+                      <label for="managerName">Manager Name</label>
+                      <input type="text" 
+                            class="form-control" 
+                            id="managerName" 
+                            name="managerName"
+                            formControlName="managerName"
+                            aria-describedby="emailHelp">
+                            <span *ngIf="managerReg.controls['managerName'].touched && !managerReg.controls['managerName'].valid">
+                         
+                                <span *ngIf="managerReg.controls['managerName'].hasError('required')">
+                                       Manager name is required !
+                                </span>
+
+                                <span *ngIf="managerReg.controls['managerName'].hasError('minlength')">
+                                       Manager name should be minimum 4 character !
+                                </span>
+
+                                <span *ngIf="managerReg.controls['managerName'].hasError('maxlength')">
+                                       Manager name should be maxmimum 10 character !
+                                </span>
+
+
+                            </span>
+                    </div>
+
+
+                      <div class="form-group">
+                          <label for="placementManagerUserName">Placement Manager User Name</label>
+                          <input type="text" 
+                                class="form-control" 
+                                id="placementManagerUserName" 
+                                name="placementManagerUserName"
+                                formControlName="placementManagerUserName"
+                                aria-describedby="emailHelp">
+                                <span *ngIf="managerReg.controls['placementManagerUserName'].touched && !managerReg.controls['placementManagerUserName'].valid">
+                           
+                                  <span *ngIf="managerReg.controls['placementManagerUserName'].hasError('required')">
+                                         Placement Manager User Name is required !
+                                  </span>
+  
+                                  <span *ngIf="managerReg.controls['placementManagerUserName'].hasError('minlength')">
+                                          Placement Manager User Name should be minimum 4 character !
+                                  </span>
+  
+                                  <span *ngIf="managerReg.controls['placementManagerUserName'].hasError('maxlength')">
+                                        Placement Manager User Name should be maxmimum 15 character !
+                                  </span>
+  
+  
+                              </span>
+                     
+                        </div>
+
+                    <div class="form-group">
+                        <label for="managerEmail">Manager Email</label>
+                        <input type="email" 
+                              class="form-control" 
+                              id="managerEmail" 
+                              name="managerEmail"
+                              formControlName="managerEmail"
+                              aria-describedby="emailHelp">
+                              <span *ngIf="managerReg.controls['managerEmail'].touched && !managerReg.controls['managerEmail'].valid">
+                         
+                                <span *ngIf="managerReg.controls['managerEmail'].hasError('required')">
+                                       Manager Email is required !
+                                </span>
+
+                                <span *ngIf="managerReg.controls['managerEmail'].hasError('email')">
+                                       Please enter correct email !
+                                </span>
+
+                                
+
+                            </span>
+                   
+                      </div>
+
+                      
+                      <div class="form-group">
+                            <label for="managerContactNumber">Manager Contact Number</label>
+                            <input type="text" 
+                                  class="form-control" 
+                                  id="managerContactNumber" 
+                                  name="managerContactNumber"
+                                  formControlName="managerContactNumber"
+                                  aria-describedby="emailHelp">
+                                  <span *ngIf="managerReg.controls['managerContactNumber'].touched && !managerReg.controls['managerContactNumber'].valid">
+                             
+                                    <span *ngIf="managerReg.controls['managerContactNumber'].hasError('required')">
+                                            Manager Contact Number is required !
+                                    </span>
+    
+                                    <span *ngIf="managerReg.controls['managerContactNumber'].hasError('minlength')">
+                                           Manager Contact Number should be minimum 10 character !
+                                    </span>
+    
+                                    <span *ngIf="managerReg.controls['managerContactNumber'].hasError('maxlength')">
+                                            Manager Contact Number should be maxmimum 10 character !
+                                    </span>
+    
+    
+                                </span>
+                       
+                          </div>
+  
+                      
+                      
+                    <div class="form-group">
+                      <label for="placementManagerPassword">Placement Manager Password</label>
+                      <input type="password"
+                             class="form-control" 
+                             id="placementManagerPassword"
+                             name="placementManagerPassword"
+                             formControlName="placementManagerPassword"
+                             aria-describedby="emailHelp">
+
+                             <span *ngIf="managerReg.controls['placementManagerPassword'].touched && !managerReg.controls['placementManagerPassword'].valid">
+                         
+                                <span *ngIf="managerReg.controls['placementManagerPassword'].hasError('required')">
+                                        Placement Manager password is required !
+                                </span>
+
+                                <span *ngIf="managerReg.controls['placementManagerPassword'].hasError('minlength')">
+                                         Placement Manager password should be minimum 4 character !
+                                </span>
+
+                                <span *ngIf="managerReg.controls['placementManagerPassword'].hasError('maxlength')">
+                                         Placement Manager should be maxmimum 10 chracter !
+                                </span>
+
+
+                            </span>
+                   </div>
+                    <div class="form-group form-check">
+                        
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    </div>
+                    
+                    
+                      
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                  </form>
+            
+            </div>
+        </div>
+
+    </div>
+    
+    </div>
+
